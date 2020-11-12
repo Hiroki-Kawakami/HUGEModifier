@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F577CA4F252297210053E81E /* HMWorkspace.m in Sources */ = {isa = PBXBuildFile; fileRef = F577CA4E252297210053E81E /* HMWorkspace.m */; };
+		F577CA52252298080053E81E /* HMProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = F577CA51252298080053E81E /* HMProfile.m */; };
+		F577CA552522A1FB0053E81E /* HMCadProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = F577CA542522A1FB0053E81E /* HMCadProfile.m */; };
 		F5B126362512BE840021EB62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B126352512BE840021EB62 /* main.m */; };
+		F5B1263E2512BEAD0021EB62 /* HMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B1263D2512BEAD0021EB62 /* HMManager.m */; };
+		F5B126412512D6380021EB62 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B126402512D6380021EB62 /* CoreFoundation.framework */; };
+		F5F84177251A8EA30094ECCE /* HMVirtualHID.mm in Sources */ = {isa = PBXBuildFile; fileRef = F5F84176251A8EA30094ECCE /* HMVirtualHID.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +29,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F577CA4D252297210053E81E /* HMWorkspace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMWorkspace.h; sourceTree = "<group>"; };
+		F577CA4E252297210053E81E /* HMWorkspace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMWorkspace.m; sourceTree = "<group>"; };
+		F577CA50252298080053E81E /* HMProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMProfile.h; sourceTree = "<group>"; };
+		F577CA51252298080053E81E /* HMProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMProfile.m; sourceTree = "<group>"; };
+		F577CA532522A1FB0053E81E /* HMCadProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMCadProfile.h; sourceTree = "<group>"; };
+		F577CA542522A1FB0053E81E /* HMCadProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMCadProfile.m; sourceTree = "<group>"; };
 		F5B126322512BE840021EB62 /* HUGEModifier */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HUGEModifier; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5B126352512BE840021EB62 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F5B1263C2512BEAD0021EB62 /* HMManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMManager.h; sourceTree = "<group>"; };
+		F5B1263D2512BEAD0021EB62 /* HMManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMManager.m; sourceTree = "<group>"; };
+		F5B126402512D6380021EB62 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		F5F84175251A8EA30094ECCE /* HMVirtualHID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMVirtualHID.h; sourceTree = "<group>"; };
+		F5F84176251A8EA30094ECCE /* HMVirtualHID.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMVirtualHID.mm; sourceTree = "<group>"; };
+		F5F84178251A95A40094ECCE /* karabiner_virtual_hid_device.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = karabiner_virtual_hid_device.hpp; sourceTree = "<group>"; };
+		F5F84179251A95A40094ECCE /* karabiner_virtual_hid_device_methods.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = karabiner_virtual_hid_device_methods.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B126412512D6380021EB62 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +63,7 @@
 			children = (
 				F5B126342512BE840021EB62 /* HUGEModifier */,
 				F5B126332512BE840021EB62 /* Products */,
+				F5B1263F2512D6380021EB62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +79,28 @@
 			isa = PBXGroup;
 			children = (
 				F5B126352512BE840021EB62 /* main.m */,
+				F5B1263C2512BEAD0021EB62 /* HMManager.h */,
+				F5B1263D2512BEAD0021EB62 /* HMManager.m */,
+				F5F84175251A8EA30094ECCE /* HMVirtualHID.h */,
+				F5F84176251A8EA30094ECCE /* HMVirtualHID.mm */,
+				F577CA4D252297210053E81E /* HMWorkspace.h */,
+				F577CA4E252297210053E81E /* HMWorkspace.m */,
+				F577CA50252298080053E81E /* HMProfile.h */,
+				F577CA51252298080053E81E /* HMProfile.m */,
+				F577CA532522A1FB0053E81E /* HMCadProfile.h */,
+				F577CA542522A1FB0053E81E /* HMCadProfile.m */,
+				F5F84179251A95A40094ECCE /* karabiner_virtual_hid_device_methods.hpp */,
+				F5F84178251A95A40094ECCE /* karabiner_virtual_hid_device.hpp */,
 			);
 			path = HUGEModifier;
+			sourceTree = "<group>";
+		};
+		F5B1263F2512D6380021EB62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5B126402512D6380021EB62 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F577CA4F252297210053E81E /* HMWorkspace.m in Sources */,
+				F5B1263E2512BEAD0021EB62 /* HMManager.m in Sources */,
+				F5F84177251A8EA30094ECCE /* HMVirtualHID.mm in Sources */,
+				F577CA52252298080053E81E /* HMProfile.m in Sources */,
 				F5B126362512BE840021EB62 /* main.m in Sources */,
+				F577CA552522A1FB0053E81E /* HMCadProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQG2XWAYY3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -249,7 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQG2XWAYY3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

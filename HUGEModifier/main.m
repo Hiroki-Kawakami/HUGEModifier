@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HMManager.h"
+#import "HMWorkspace.h"
+#import "HMProfile.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        NSLog(@"Hello, World!");
+        [[HMManager sharedManager] open];
+        [[HMWorkspace shared] setManager:[HMManager sharedManager]];
+        CFRunLoopRun();
     }
     return 0;
 }
