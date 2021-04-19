@@ -17,6 +17,7 @@ int main(int argc, const char * argv[]) {
         [[HMManager sharedManager] open];
         [[HMWorkspace shared] setManager:[HMManager sharedManager]];
         CFRunLoopRun();
+        printf("hoge");
     }
     return 0;
 }

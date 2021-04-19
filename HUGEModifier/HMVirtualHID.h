@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)control:(BOOL)down;
 - (void)command:(BOOL)down;
+- (void)shift:(BOOL)down;
+- (void)option:(BOOL)down;
 - (void)key:(uint8_t)code down:(BOOL)down;
 
 @end

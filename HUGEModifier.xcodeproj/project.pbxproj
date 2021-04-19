@@ -13,7 +13,7 @@
 		F5B126362512BE840021EB62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B126352512BE840021EB62 /* main.m */; };
 		F5B1263E2512BEAD0021EB62 /* HMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B1263D2512BEAD0021EB62 /* HMManager.m */; };
 		F5B126412512D6380021EB62 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B126402512D6380021EB62 /* CoreFoundation.framework */; };
-		F5F84177251A8EA30094ECCE /* HMVirtualHID.mm in Sources */ = {isa = PBXBuildFile; fileRef = F5F84176251A8EA30094ECCE /* HMVirtualHID.mm */; };
+		F5F84177251A8EA30094ECCE /* HMVirtualHID.mm in Sources */ = {isa = PBXBuildFile; fileRef = F5F84176251A8EA30094ECCE /* HMVirtualHID.mm */; settings = {COMPILER_FLAGS = "-std=gnu++2a"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,8 +42,6 @@
 		F5B126402512D6380021EB62 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		F5F84175251A8EA30094ECCE /* HMVirtualHID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMVirtualHID.h; sourceTree = "<group>"; };
 		F5F84176251A8EA30094ECCE /* HMVirtualHID.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMVirtualHID.mm; sourceTree = "<group>"; };
-		F5F84178251A95A40094ECCE /* karabiner_virtual_hid_device.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = karabiner_virtual_hid_device.hpp; sourceTree = "<group>"; };
-		F5F84179251A95A40094ECCE /* karabiner_virtual_hid_device_methods.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = karabiner_virtual_hid_device_methods.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +87,6 @@
 				F577CA51252298080053E81E /* HMProfile.m */,
 				F577CA532522A1FB0053E81E /* HMCadProfile.h */,
 				F577CA542522A1FB0053E81E /* HMCadProfile.m */,
-				F5F84179251A95A40094ECCE /* karabiner_virtual_hid_device_methods.hpp */,
-				F5F84178251A95A40094ECCE /* karabiner_virtual_hid_device.hpp */,
 			);
 			path = HUGEModifier;
 			sourceTree = "<group>";
@@ -129,7 +125,7 @@
 		F5B1262A2512BE840021EB62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = hiroki;
 				TargetAttributes = {
 					F5B126312512BE840021EB62 = {
@@ -178,7 +174,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -198,6 +194,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -222,11 +219,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Karabiner-DriverKit-VirtualHIDDevice/examples/virtual-hid-device-service-client/vendor/include",
+					"$(PROJECT_DIR)/Karabiner-DriverKit-VirtualHIDDevice/include",
+				);
 			};
 			name = Debug;
 		};
@@ -236,7 +238,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -256,6 +258,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -274,16 +277,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Karabiner-DriverKit-VirtualHIDDevice/examples/virtual-hid-device-service-client/vendor/include",
+					"$(PROJECT_DIR)/Karabiner-DriverKit-VirtualHIDDevice/include",
+				);
 			};
 			name = Release;
 		};
 		F5B1263A2512BE840021EB62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -294,6 +303,7 @@
 		F5B1263B2512BE840021EB62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;

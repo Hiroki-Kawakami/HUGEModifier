@@ -72,7 +72,17 @@
 }
 
 - (void)wheelVertical:(int16_t)vertical manager:(HMManager*)manager {
-    [self adjustVolume:vertical*0.03];
+    uint8_t code = 0;
+    if (vertical > 0) code = kHIDUsage_KeyboardVolumeUp;
+    if (vertical < 0) code = kHIDUsage_KeyboardVolumeDown;
+    if (code) {
+        [virtualHID shift:YES];
+        [virtualHID option:YES];
+        [virtualHID key:code down:YES];
+        [virtualHID shift:NO];
+        [virtualHID option:NO];
+        [virtualHID key:code down:NO];
+    }
 }
 
 - (void)wheelHorizontal:(int16_t)horizontal manager:(HMManager*)manager {
@@ -89,34 +99,6 @@
 //    CGEventRef scroll = CGEventCreateScrollWheelEvent(nil, kCGScrollEventUnitPixel, 2, offset.y * 1.5, offset.x * 1.5);
     CGEventPost(kCGHIDEventTap, scroll);
     CFRelease(scroll);
-}
-
-// 音量調整
--(void)adjustVolume:(CGFloat)offset {
-    AudioObjectPropertyAddress addr;
-    addr.mSelector = kAudioHardwarePropertyDefaultOutputDevice;
-    addr.mScope = kAudioObjectPropertyScopeGlobal;
-    addr.mElement = kAudioObjectPropertyElementMaster;
-
-    AudioDeviceID outputDeviceID;
-    UInt32 size = sizeof(AudioDeviceID);
-    OSStatus err = AudioObjectGetPropertyData(kAudioObjectSystemObject, &addr, 0, NULL, &size, &outputDeviceID);
-
-    if (err == noErr) {
-        AudioObjectPropertyAddress addr;
-        addr.mSelector = kAudioHardwareServiceDeviceProperty_VirtualMasterVolume;
-        addr.mScope = kAudioObjectPropertyScopeOutput;
-        addr.mElement = kAudioObjectPropertyElementMaster;
-        Float32 volume;
-
-        // 音量を取得
-        AudioObjectGetPropertyData(outputDeviceID, &addr, 0, NULL, &size, &volume);
-        
-        // 音量を設定
-        size = sizeof(Float32);
-        volume += offset;
-        AudioObjectSetPropertyData(outputDeviceID, &addr, 0, NULL, size, &volume);
-    }
 }
 
 -(void)openApplication:(NSString*)application {
